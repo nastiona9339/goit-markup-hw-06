@@ -667,6 +667,9 @@ body {
 }
 
 .footer-button-form {
+  display: flex;
+  align-items: center;
+
   min-width: 165px;
 
   padding: 8px 24px;
@@ -674,6 +677,11 @@ body {
   color: var(--primary-white-color);
 
   border-radius: 4px;
+}
+
+.footer-buttom-wrap {
+  display: inline-block;
+  margin-left: 16px;
 }
 
 /* --------Modal------ */
@@ -735,6 +743,19 @@ body {
   border-radius: 50%;
 
   margin-bottom: 24px;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  background-color: var(--bt-acc-color);
+}
+
+.modal-close:hover,
+.modal-close:focus > .modal-icon {
+  fill: var(--primary-white-color);
 }
 
 .is-hidden {
@@ -823,18 +844,41 @@ body {
   color: rgba(117, 117, 117, 0.5);
 }
 
-.agree-input {
-  position: relative;
-}
-
-.agree-icon {
-  position: absolute;
-}
-.agree-text {
+.politic-text {
   color: #757575;
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
 }
 
-.agree-link {
+.politic-text span {
+  width: 16px;
+  height: 16px;
+  border: 1.25px solid var(--link-def-color);
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 11px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.politic-icon {
+  fill: transparent;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.politic:checked + label > span {
+  background-color: #404bbf;
+  border: none;
+}
+
+.politic:checked + label > span svg {
+  fill: #f4f4fd;
+}
+
+.politic-link {
   color: var(--accent-color);
 }
 .form-button {
@@ -857,4 +901,8 @@ body {
 .form-button:focus {
   background-color: var(--bt-acc-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.button-submit {
+  position: absolute;
 }
